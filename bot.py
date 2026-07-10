@@ -1,4 +1,4 @@
-# bot.py
+# bot.py - Render Version (Webhook Fix)
 import telebot
 import os
 
@@ -10,4 +10,12 @@ def start(message):
     bot.reply_to(message, "✅ Render पर बोट चल रहा है!")
 
 print("🤖 BOT STARTING ON RENDER...")
+
+# 🔥 Webhook हटाएं - ये 1 Line Fix करेगी!
+try:
+    bot.remove_webhook()
+    print("✅ Webhook हटा दिया गया")
+except:
+    pass
+
 bot.polling(none_stop=True)
